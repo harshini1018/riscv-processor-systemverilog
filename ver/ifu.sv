@@ -9,7 +9,7 @@ module ifu(
     output logic [31:0] pc_prev
 );
 
-// Edit the code here begin ---------------------------------------------------
+
 
    
     always @ ( posedge i_clk or negedge i_rst) begin 
@@ -38,11 +38,7 @@ module ifu(
     end 
 
     
-// Edit the code here end -----------------------------------------------------
 
-/*
-	Following section is necessary for dumping waveforms. This is needed for debug and simulations
-*/
 
 `ifndef SUBMODULE_DISABLE_WAVES
     initial begin
