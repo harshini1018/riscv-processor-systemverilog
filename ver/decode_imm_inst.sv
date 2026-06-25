@@ -11,7 +11,7 @@ module decode_imm_inst(
     output logic [4:0] alu_control
 );
 
-// Edit the code here begin ---------------------------------------------------
+
 
    always @(*) begin 
      imm =instruction_code[31:20];
@@ -56,11 +56,7 @@ module decode_imm_inst(
 
 
     
-// Edit the code here end -----------------------------------------------------
 
-/*
-	Following section is necessary for dumping waveforms. This is needed for debug and simulations
-*/
 
 `ifndef SUBMODULE_DISABLE_WAVES
     initial begin
