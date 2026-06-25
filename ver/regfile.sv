@@ -15,7 +15,7 @@ logic [31:0] regs [0:31];
  integer i;
 
 
-// Edit the code here begin ---------------------------------------------------
+
 always @(*) begin 
     rs1_val = regs[rs1];
     rs2_val = regs[rs2];
@@ -32,7 +32,7 @@ always @ ( posedge i_clk or negedge i_rst )begin
         regs[rd] <= rd_write_val;  
     end      
 end 
-// Edit the code here end -----------------------------------------------------
+
 generate 
     for(genvar ii=0;ii<32;ii+=1) begin: gen_reg_temp
     wire[31:0] reg_dump;
@@ -40,9 +40,7 @@ generate
     end
     endgenerate
 
-/*
-	Following section is necessary for dumping waveforms. This is needed for debug and simulations
-*/
+
 
 `ifndef SUBMODULE_DISABLE_WAVES
     initial begin
