@@ -11,7 +11,6 @@ module decode_jump_inst(
     output logic [1:0] jump_control
 );
 
-// Edit the code here begin ---------------------------------------------------
 
      assign rd = instruction_code[11:7];
     always @(* ) begin 
@@ -46,11 +45,7 @@ module decode_jump_inst(
      endcase 
     end 
     
-// Edit the code here end -----------------------------------------------------
 
-/*
-	Following section is necessary for dumping waveforms. This is needed for debug and simulations
-*/
 
 `ifndef SUBMODULE_DISABLE_WAVES
     initial begin
