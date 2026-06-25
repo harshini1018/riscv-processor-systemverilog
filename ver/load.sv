@@ -20,21 +20,194 @@ module load(
     output logic [31:0] mem_addr
 );
 
-// Edit the code here begin ---------------------------------------------------
+logic [1:0] temp1 ;
+  logic [2:0] temp;
+    assign mem_rw_mode = 1'b1 ; 
+   
+    always @(*) begin 
+        if (load_control!=`LD_NOP) begin
+            stall_pc = 1'b1 ;
+            mem_addr = rs1_val + imm ;
+           
 
-    assign stall_pc = 'b0;
-    assign ignore_curr_inst = 'b0;
-    assign rd_write_control = 'b0;
-    assign rd_out = 'b0;
-    assign rd_write_val = 'b0;
-    assign mem_rw_mode = 'b0;
-    assign mem_addr = 'b0;
+         end 
+        else  begin
+            stall_pc = 1'b0 ;
+            mem_addr = 0 ;
+            
+           
+         
+
+         end  
+    end 
+    always @(posedge i_clk or negedge i_rst ) begin
+        
+        if (!i_rst) begin
+            
+            rd_write_control <= 0;
+            
+            rd_out <= 0;
+            ignore_curr_inst <= 0;
+            temp1 <= 0 ;
+         temp <= 0 ;
+            
+            
+        end
+        else if (stall_pc)
+        begin 
+            rd_write_control <= 1'b1;
+            
+            rd_out <= rd_in;
+            ignore_curr_inst <= 1'b1 ;
+            temp1 <= mem_addr[1:0] ;
+         temp <= load_control ;
+            
+         end
+          else begin 
+             rd_write_control <= 0;
+            
+            rd_out <= 0;
+            ignore_curr_inst <= 0;
+            temp1 <= 0 ;
+         temp <= 0 ;
+            
+
+          end 
+    end 
+    always @(*) begin
     
-// Edit the code here end -----------------------------------------------------
+    if (rd_write_control) begin 
+        
+        case (temp) 
+               `LW :  begin
+                rd_write_val = mem_data ;
+                end 
 
-/*
-	Following section is necessary for dumping waveforms. This is needed for debug and simulations
-*/
+            
+
+           
+
+               `LB : begin
+                
+            
+                case (temp1)
+                2'b00 : begin 
+                rd_write_val = {{24{mem_data[7]}},mem_data[7:0]} ;
+
+                end
+                2'b01 : begin 
+                rd_write_val = {{24{mem_data[15]}},mem_data[15:8] };
+
+
+                end
+                2'b10 : begin 
+                 rd_write_val = {{24{mem_data[23]}},mem_data[23:16] } ;
+
+
+                end
+                2'b11 : begin 
+                rd_write_val = { {24{mem_data[31]}},mem_data[31:24] } ;
+
+
+
+                end
+
+                endcase 
+                end
+
+                `LH : begin
+                
+            
+                case (temp1)
+                2'b00 : begin 
+                rd_write_val = {{16{mem_data[15]}},mem_data[15:0]} ;
+
+                end
+                2'b01 : begin 
+                rd_write_val = {{16{mem_data[15]}},mem_data[15:0] };
+
+
+                end
+                2'b10 : begin 
+                 rd_write_val = {{16{mem_data[31]}},mem_data[31:16] } ;
+
+
+                end
+                2'b11 : begin 
+                rd_write_val = { {16{mem_data[31]}},mem_data[31:16] } ;
+
+
+
+                end
+
+                endcase 
+                end
+
+                `LBU : begin
+                
+             
+            
+                case (temp1)
+                2'b00 : begin 
+                rd_write_val = {{24{1'b0}},mem_data[7:0]} ;
+
+                end
+                2'b01 : begin 
+                rd_write_val = {{24{1'b0}},mem_data[15:8] };
+
+
+                end
+                2'b10 : begin 
+                 rd_write_val = {{24{1'b0}},mem_data[23:16] } ;
+
+
+                end
+                2'b11 : begin 
+                rd_write_val = { {24{1'b0}},mem_data[31:24] } ;
+
+
+
+                end
+
+                endcase 
+                end
+            
+               `LHU : begin
+                
+             
+            
+                case (temp1)
+                2'b00 : begin 
+                rd_write_val = {{16{1'b0}},mem_data[15:0]} ;
+
+                end
+                2'b01 : begin 
+                rd_write_val = {{16{1'b0}},mem_data[15:0] };
+
+
+                end
+                2'b10 : begin 
+                 rd_write_val = {{16{1'b0}},mem_data[31:16] } ;
+
+
+                end
+                2'b11 : begin 
+                rd_write_val = { {16{1'b0}},mem_data[31:16] } ;
+
+
+
+                end
+
+                endcase 
+
+             end 
+             default :  begin
+             rd_write_val = 0 ;
+             end 
+            endcase
+
+         
+     end 
 
 `ifndef SUBMODULE_DISABLE_WAVES
     initial begin
