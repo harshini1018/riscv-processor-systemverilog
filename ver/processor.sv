@@ -119,9 +119,7 @@ ieu inst_ieu(
 );
 
 
-/*
-	Following section is necessary for dumping waveforms. This is needed for debug and simulations
-*/
+
 
 integer i;
 
