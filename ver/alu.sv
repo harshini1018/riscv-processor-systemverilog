@@ -91,9 +91,7 @@ always @ (*) begin
     end
 end
 
-/*
-	Following section is necessary for dumping waveforms. This is needed for debug and simulations
-*/
+
 
 `ifndef SUBMODULE_DISABLE_WAVES
    	initial begin
