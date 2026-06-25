@@ -11,7 +11,7 @@ module decode_store_inst(
     output logic [2:0] store_control
 );
 
-// Edit the code here begin ---------------------------------------------------
+
 
    
    always @(*) begin 
@@ -29,11 +29,7 @@ rs2 =instruction_code[24:20];
 
 
    end 
-// Edit the code here end -----------------------------------------------------
 
-/*
-	Following section is necessary for dumping waveforms. This is needed for debug and simulations
-*/
 
 `ifndef SUBMODULE_DISABLE_WAVES
     initial begin
