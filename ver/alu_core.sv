@@ -15,7 +15,7 @@ module alu_core(
     output logic [31:0] rd_write_val
 );
 
-// Edit the code here begin ---------------------------------------------------
+
  always @( * )
  begin
    case (alu_control)
@@ -33,11 +33,7 @@ module alu_core(
    
           
            
-// Edit the code here end -----------------------------------------------------
 
-/*
-    Following section is necessary for dumping waveforms. This is needed for debug and simulations
-*/
 
 `ifndef SUBMODULE_DISABLE_WAVES_ALU_CORE
     initial begin
