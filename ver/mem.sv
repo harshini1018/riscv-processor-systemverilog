@@ -12,7 +12,7 @@ module mem(
 logic [31:0] memory_reg [0:1023];
 integer i ;
 
-// Edit the code here begin ---------------------------------------------------
+
 
     always @ (posedge i_clk or negedge i_rst)  begin
         if ( !i_rst) begin 
@@ -46,11 +46,7 @@ integer i ;
     
 
     
-// Edit the code here end -----------------------------------------------------
 
-/*
-	Following section is necessary for dumping waveforms. This is needed for debug and simulations
-*/
 
 `ifndef SUBMODULE_DISABLE_WAVES
     initial begin
