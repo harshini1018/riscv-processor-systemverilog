@@ -10,7 +10,7 @@ module decode_upperimm_inst(
     output logic [4:0] alu_control
 );
 
-// Edit the code here begin ---------------------------------------------------
+
 
     
 
@@ -36,11 +36,7 @@ module decode_upperimm_inst(
      endcase 
     end 
     
-// Edit the code here end -----------------------------------------------------
 
-/*
-	Following section is necessary for dumping waveforms. This is needed for debug and simulations
-*/
 
 `ifndef SUBMODULE_DISABLE_WAVES
     initial begin
