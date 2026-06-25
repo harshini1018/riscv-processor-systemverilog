@@ -16,20 +16,34 @@ module inst_data_arbiter(
     output logic [3:0] to_mem_byte_en
 );
 
-// Edit the code here begin ---------------------------------------------------
+always @(*) begin
+      to_mem_byte_en = mem_byte_en ;
+      to_mem_write_data = mem_write_data ;
+      
+        if (stall_pc) begin 
+          
+            to_mem_addr = mem_addr;
+            to_mem_rw_mode = mem_rw_mode ;
+            
+            
+        end
+        else begin 
+            to_mem_addr = inst_addr ;
+            to_mem_rw_mode = 1'b1 ;
+        end 
+        
+        
+        
+        if (ignore_curr_inst) begin 
+            mem_read_data = from_mem_data ;
+            instruction_code = 0;
 
-    assign instruction_code = 'b0;
-    assign mem_read_data = 'b0;
-    assign to_mem_addr = 'b0;
-    assign to_mem_rw_mode = 'b0;
-    assign to_mem_write_data = 'b0;
-    assign to_mem_byte_en = 'b0;
-    
-// Edit the code here end -----------------------------------------------------
-
-/*
-	Following section is necessary for dumping waveforms. This is needed for debug and simulations
-*/
+        end 
+        else begin 
+            mem_read_data = 0;
+            instruction_code = from_mem_data ;
+        end 
+    end
 
 `ifndef SUBMODULE_DISABLE_WAVES
     initial begin
