@@ -159,7 +159,8 @@ always @ (*) begin
     ignore_curr_inst = branch_ignore_curr_inst | jump_ignore_curr_inst | load_ignore_curr_inst | store_ignore_curr_inst;
     
     mem_rw_mode = load_mem_rw_mode & store_mem_rw_mode;
-    mem_addr = load_mem_addr | store_mem_addr;
+    //mem_addr = load_mem_addr | store_mem_addr;
+     mem_addr = (store_mem_addr)? load_mem_addr : store_mem_addr ;
 end
 
 endmodule
