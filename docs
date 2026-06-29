@@ -1,5 +1,6 @@
 ### Instruction Fetch Unit (IFU)
 
+
 The waveform below verifies the IFU functionality.
 
 - Reset initializes the Program Counter (PC) to `0`.
@@ -7,4 +8,4 @@ The waveform below verifies the IFU functionality.
 - When `stall_pc` is asserted, the PC holds its current value.
 - When `pc_update_control` is asserted, the PC is updated with `pc_update_val`.
 
-"C:\Users\harsh\Downloads\wish_shared\3_riscv\Screenshot from 2026-06-29 18-00-12.png"
+
