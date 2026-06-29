@@ -66,66 +66,35 @@ The processor follows a modular datapath architecture:
 ## Supported RV32I Instructions
 <img width="536" height="112" alt="image" src="https://github.com/user-attachments/assets/6d1b52cb-a49f-424e-992b-5665926f27a0" />
 
+| Category        | Instructions                                         |
+| --------------- | ---------------------------------------------------- |
+| R-Type          | ADD, SUB, XOR, AND, OR, SLL, SRL, SRA, SLT, SLTU     |
+| I-Type          | ADDI, XORI, ORI, ANDI, SLLI, SRLI, SRAI, SLTI, SLTIU |
+| Load            | LB, LH, LW, LBU, LHU                                 |
+| Store           | SB, SH, SW                                           |
+| Branch          | BEQ, BNE, BLT, BGE, BLTU, BGEU                       |
+| Jump            | JAL, JALR                                            |
+| Upper Immediate | LUI, AUIPC                                           |
 
-### R-Type
-
-* ADD
-* SUB
-* SLL
-* SLT
-* SLTU
-* XOR
-* SRL
-* SRA
-* OR
-* AND
-
-### I-Type
-
-* ADDI
-* SLTI
-* SLTIU
-* XORI
-* ORI
-* ANDI
-* SLLI
-* SRLI
-* SRAI
-
-### Load Instructions
-
-* LB
-* LH
-* LW
-* LBU
-* LHU
-
-### Store Instructions
-
-* SB
-* SH
-* SW
-
-### Branch Instructions
-
-* BEQ
-* BNE
-* BLT
-* BGE
-* BLTU
-* BGEU
-
-### Jump Instructions
-
-* JAL
-* JALR
-
-### Upper Immediate Instructions
-
-* LUI
-* AUIPC
-
----
+riscv-processor-systemverilog
+│
+├── rtl/
+│   ├── ifu.sv
+│   ├── idu.sv
+│   ├── ieu.sv
+│   ├── regfile.sv
+│   ├── memory.sv
+│   └── ...
+│
+├── sim/
+│   ├── test_general.py
+│   ├── test_instr.py
+│   ├── Makefile
+│   └── ...
+│
+├── firmware/
+├── docs/
+└── README.md
 
 ## Verification
 
