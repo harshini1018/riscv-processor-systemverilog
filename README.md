@@ -11,6 +11,8 @@ The processor is built using a modular architecture consisting of instruction fe
 ## Architecture
 
 The processor follows a modular datapath architecture:
+<img width="835" height="326" alt="image" src="https://github.com/user-attachments/assets/e9f3d787-7e76-4bb6-8f71-e48646f90cee" />
+
 
 ```text
                 +---------+
@@ -100,6 +102,8 @@ The processor follows a modular datapath architecture:
 ---
 
 ## Supported RV32I Instructions
+<img width="536" height="112" alt="image" src="https://github.com/user-attachments/assets/6d1b52cb-a49f-424e-992b-5665926f27a0" />
+
 
 ### R-Type
 
@@ -192,8 +196,7 @@ Verification includes both module-level and instruction-level testing.
 
 ## Repository Structure
 
-```text
-.
+
 ├── ver/
 │   ├── RTL source files
 │   ├── Processor modules
@@ -211,9 +214,7 @@ Verification includes both module-level and instruction-level testing.
 │   └── Build scripts
 │
 └── README.md
-```
 
----
 
 ## Learning Outcomes
 
@@ -225,7 +226,7 @@ Verification includes both module-level and instruction-level testing.
 * Debugging and simulation workflows
 * Hardware-software interaction concepts
 
----
+
 
 ## Acknowledgement
 
