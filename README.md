@@ -11,7 +11,9 @@ The processor is built using a modular architecture consisting of instruction fe
 ## Architecture
 
 The processor follows a modular datapath architecture:
+
 <img width="835" height="326" alt="image" src="https://github.com/user-attachments/assets/e9f3d787-7e76-4bb6-8f71-e48646f90cee" />
+
 
 
 
@@ -64,7 +66,9 @@ The processor follows a modular datapath architecture:
 ---
 
 ## Supported RV32I Instructions
+
 <img width="536" height="112" alt="image" src="https://github.com/user-attachments/assets/6d1b52cb-a49f-424e-992b-5665926f27a0" />
+
 
 | Category        | Instructions                                         |
 | --------------- | ---------------------------------------------------- |
@@ -76,25 +80,7 @@ The processor follows a modular datapath architecture:
 | Jump            | JAL, JALR                                            |
 | Upper Immediate | LUI, AUIPC                                           |
 
-riscv-processor-systemverilog
-│
-├── rtl/
-│   ├── ifu.sv
-│   ├── idu.sv
-│   ├── ieu.sv
-│   ├── regfile.sv
-│   ├── memory.sv
-│   └── ...
-│
-├── sim/
-│   ├── test_general.py
-│   ├── test_instr.py
-│   ├── Makefile
-│   └── ...
-│
-├── firmware/
-├── docs/
-└── README.md
+
 
 ## Verification
 
