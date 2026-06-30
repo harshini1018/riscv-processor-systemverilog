@@ -123,6 +123,13 @@ Verification includes both module-level and instruction-level testing.
 * Functional verification using Cocotb
 * Debugging and simulation workflows
 * Hardware-software interaction concepts
+  
+## Result Gtkwave
+
+
+<p align="center">
+  <img src="docs/processor.png" alt="Result Waveform" width="850">
+</p>
 
 
 
