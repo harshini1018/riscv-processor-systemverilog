@@ -21,6 +21,7 @@ The processor follows a modular datapath architecture:
 
 ## Features
 
+
 ### Instruction Fetch Unit (IFU)
 
 * Program Counter (PC) management
@@ -70,6 +71,7 @@ The processor follows a modular datapath architecture:
 <img width="536" height="112" alt="image" src="https://github.com/user-attachments/assets/6d1b52cb-a49f-424e-992b-5665926f27a0" />
 
 
+
 | Category        | Instructions                                         |
 | --------------- | ---------------------------------------------------- |
 | R-Type          | ADD, SUB, XOR, AND, OR, SLL, SRL, SRA, SLT, SLTU     |
@@ -84,18 +86,19 @@ The processor follows a modular datapath architecture:
 
 ## Verification
 
-The processor was verified using Cocotb-based testbenches covering:
+The processor was verified using **Cocotb** testbenches at both the module and processor level.
 
-* ALU functionality
-* Register file operations
-* Instruction decoding
-* Branch control logic
-* Jump control logic
-* Load/store operations
-* Memory interface functionality
-* Complete RV32I instruction execution
+Verification includes:
 
-Verification includes both module-level and instruction-level testing.
+- Instruction Fetch Unit (IFU)
+- Instruction Decode Unit (IDU)
+- Register File
+- ALU operations
+- Branch and Jump control
+- Load and Store operations
+- Memory Interface
+- Complete RV32I instruction execution
+
 
 ---
 
@@ -116,15 +119,14 @@ Verification includes both module-level and instruction-level testing.
 
 ## Learning Outcomes
 
-* RTL design using SystemVerilog
-* Processor architecture fundamentals
-* RISC-V instruction set implementation
-* Modular hardware design methodology
-* Functional verification using Cocotb
-* Debugging and simulation workflows
-* Hardware-software interaction concepts
+- RTL Design using SystemVerilog
+- RV32I Processor Architecture
+- Functional Verification using Cocotb
+- Digital Design Debugging with GTKWave
+- Hardware/Software Co-design Concepts
+
   
-## Result Gtkwave
+## Result Waveform
 
 
 <p align="center">
